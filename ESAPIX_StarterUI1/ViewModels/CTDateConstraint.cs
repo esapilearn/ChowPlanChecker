@@ -21,10 +21,10 @@ namespace ESAPX_StarterUI.ViewModels
         public ConstraintResult Constrain(PlanningItem pi)
         {
             var image = pi.GetImage();
-            return ConstraintCTDate(image.CreationDateTime);
+            return ConstrainCTDate(image.CreationDateTime);
         }
 
-        public ConstraintResult ConstraintCTDate(DateTime? creationDate)
+        public ConstraintResult ConstrainCTDate(DateTime? creationDate)
         {
             var diffDays = (DateTime.Now - creationDate).Value.TotalDays;
             var msg = $"CT is {diffDays} days old";
